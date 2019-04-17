@@ -7,10 +7,11 @@ const Groceries = props => {
     const handleAddElement = itemName => {
         props.onAddElement(itemName);
     }
-
+    let elementIndex = 0;
     return(
         arrayOfLabels.map((item, key ) => {
-            return <GroceryItem key={key} onPlusClick={handleAddElement} label={item}/>    
+            elementIndex++;  
+            return <GroceryItem key={key} index={elementIndex}onPlusClick={handleAddElement} label={item}/>  
         })
     ); 
 };
